@@ -19,12 +19,12 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Check out tagged source
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
           cache: npm
@@ -46,6 +46,7 @@ jobs:
         run: |
           tag_version="${GITHUB_REF_NAME#v}"
           package_version="$(node --print "require('./package.json').version")"
+          package_license="$(node --print "require('./package.json').license")"
 
           if [[ "$tag_version" != "$package_version" ]]; then
             echo "Tag version $tag_version does not match package version $package_version."
@@ -54,6 +55,16 @@ jobs:
 
           if ! grep --fixed-strings --quiet "$GITHUB_REF_NAME" RELEASE_NOTES.md; then
             echo "RELEASE_NOTES.md does not mention $GITHUB_REF_NAME."
+            exit 1
+          fi
+
+          if [[ "$package_license" != "MIT" ]]; then
+            echo "package.json must declare the MIT license."
+            exit 1
+          fi
+
+          if [[ ! -s LICENSE ]] || ! grep --fixed-strings --quiet "MIT License" LICENSE; then
+            echo "A non-empty MIT LICENSE file is required."
             exit 1
           fi
 

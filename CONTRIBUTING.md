@@ -67,3 +67,5 @@ Use clear, imperative commit subjects such as `Add API request validation tests`
 ## Reporting problems
 
 Use the repository's issue forms for reproducible bugs, feature proposals, and [setup or usage questions](https://github.com/nahin333/where-and-how-much/issues/new?template=question.yml). Do not report security vulnerabilities in a public issue; follow [SECURITY.md](SECURITY.md) instead.
+
+By submitting a contribution, you confirm that you have the right to submit it and agree that it may be distributed under PantryPin's [MIT License](LICENSE).

@@ -35,7 +35,7 @@ Upload `docs/pantrypin-social-preview.png` under **Settings → General → Soci
 
 > The public Pages build is an honest, labeled scenario demo. The repo also includes an optional OpenAI vision backend for self-hosting.
 >
-> I would love feedback on the idea and UX. If it clicks, a ⭐ or fork helps others find it.
+> The source is MIT licensed. I would love feedback on the idea and UX. If it clicks, a ⭐ or fork helps others find it.
 
 ## LinkedIn
 
@@ -115,11 +115,11 @@ Upload `docs/pantrypin-social-preview.png` under **Settings → General → Soci
 
 ## Launch checklist
 
-- [ ] Choose and add a project license
+- [x] Add the MIT License
 - [ ] Publish the `v0.1.0` GitHub Release
-- [ ] Add repository description, homepage, and topics
+- [x] Add repository description, homepage, and topics
 - [ ] Upload the social-preview PNG
-- [ ] Enable private vulnerability reporting in **Settings → Security**
+- [x] Enable private vulnerability reporting in **Settings → Security**
 - [ ] Pin PantryPin on the GitHub profile
 - [ ] Post the two-message X thread
 - [ ] Share on LinkedIn with the demo screenshot

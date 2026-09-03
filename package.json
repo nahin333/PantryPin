@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Turn food photos into likely ingredients, nutrition estimates, and a grocery-planning view.",
   "private": true,
+  "license": "MIT",
   "author": "nahin333",
   "homepage": "https://nahin333.github.io/where-and-how-much/",
   "repository": {

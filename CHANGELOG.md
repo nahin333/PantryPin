@@ -23,6 +23,7 @@ All notable changes to PantryPin are documented here. The format follows [Keep a
 - CORS boundary for a separately hosted API
 - Automated GitHub Pages deployment
 - Pricing helper unit tests and production build checks
+- MIT License and contributor-facing community files
 
 [Unreleased]: https://github.com/nahin333/where-and-how-much/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/nahin333/where-and-how-much/releases/tag/v0.1.0

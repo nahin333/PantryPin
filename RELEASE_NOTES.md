@@ -7,6 +7,8 @@ PantryPin is a first public MVP exploring a simple idea: what if a food photo co
 - [Live simulated demo](https://nahin333.github.io/where-and-how-much/)
 - [Source and setup](https://github.com/nahin333/where-and-how-much)
 
+This is a GitHub source release. GitHub provides downloadable source archives for the tagged version; PantryPin is not published as an npm package.
+
 ## Highlights
 
 - Food-photo upload flow
@@ -17,6 +19,7 @@ PantryPin is a first public MVP exploring a simple idea: what if a food photo co
 - Responsive GitHub Pages deployment
 - Optional OpenAI vision backend for self-hosted deployments
 - Tests, typed data boundaries, and automated deployment
+- MIT-licensed source with contribution and support guides
 
 ## Know before you try it
 

@@ -34,3 +34,4 @@
 - [ ] Tests cover new or changed behavior where practical.
 - [ ] User-facing documentation and `.env.example` are updated when needed.
 - [ ] I have read `CONTRIBUTING.md`.
+- [ ] I have the right to submit this contribution and agree to license it under MIT.

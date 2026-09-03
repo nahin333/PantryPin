@@ -21,6 +21,7 @@
   <a href="https://github.com/nahin333/where-and-how-much/actions/workflows/deploy-pages.yml"><img alt="GitHub Pages" src="https://img.shields.io/github/actions/workflow/status/nahin333/where-and-how-much/deploy-pages.yml?branch=main&style=flat-square&label=demo"></a>
   <a href="https://github.com/nahin333/where-and-how-much/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/nahin333/where-and-how-much?style=flat-square"></a>
   <a href="https://github.com/nahin333/where-and-how-much"><img alt="GitHub stars" src="https://img.shields.io/github/stars/nahin333/where-and-how-much?style=flat-square"></a>
+  <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/github/license/nahin333/where-and-how-much?style=flat-square"></a>
 </p>
 
 <p align="center">
@@ -152,6 +153,7 @@ NEXT_PUBLIC_STATIC_DEMO=false
 - In AI mode, uploaded images pass through your backend to the configured model provider. Review that provider's data controls for your deployment.
 - Demo store names, prices, distances, and pickup windows are simulated. PantryPin does not query, scrape, represent, or receive sponsorship from Walmart, ALDI, Target, or any other retailer.
 - Recipe cards open generated searches; PantryPin does not reproduce, select, or verify individual publisher recipes.
+- Third-party retailer, publisher, and model-provider names and marks belong to their respective owners; no affiliation or endorsement is implied.
 - Confirm ingredients directly when allergies or food safety are involved.
 
 ## Roadmap
@@ -177,3 +179,7 @@ If this direction is useful, **[star PantryPin](https://github.com/nahin333/wher
 ## Releases
 
 See [CHANGELOG.md](./CHANGELOG.md) and [GitHub Releases](https://github.com/nahin333/where-and-how-much/releases).
+
+## License
+
+PantryPin's original source code, documentation, and project artwork are released under the [MIT License](./LICENSE). Third-party packages, services, names, and marks remain subject to their respective licenses and terms.
