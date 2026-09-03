@@ -116,7 +116,7 @@ Upload `docs/pantrypin-social-preview.png` under **Settings → General → Soci
 ## Launch checklist
 
 - [x] Add the MIT License
-- [ ] Publish the `v0.1.0` GitHub Release
+- [x] Publish the `v0.1.0` GitHub Release
 - [x] Add repository description, homepage, and topics
 - [ ] Upload the social-preview PNG
 - [x] Enable private vulnerability reporting in **Settings → Security**
