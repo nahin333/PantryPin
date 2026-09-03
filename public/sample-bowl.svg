@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs><radialGradient id="b" cx="45%" cy="38%"><stop stop-color="#f8d67b"/><stop offset="1" stop-color="#a86432"/></radialGradient><filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-opacity=".2"/></filter></defs>
+  <rect width="900" height="700" fill="#ddd1bd"/><ellipse cx="450" cy="365" rx="310" ry="285" fill="#f6f0e4" filter="url(#s)"/><ellipse cx="450" cy="350" rx="264" ry="235" fill="url(#b)"/>
+  <path d="M228 280c75-105 160-123 220-58-35 73-99 112-201 102z" fill="#6d8d42"/><path d="M499 168c121 22 162 72 153 157-86 15-145-27-178-121z" fill="#e4cc79"/>
+  <g fill="#d8573f"><circle cx="314" cy="400" r="42"/><circle cx="567" cy="374" r="39"/><circle cx="402" cy="233" r="31"/></g><g fill="#e9efe4"><circle cx="375" cy="455" r="48"/><circle cx="503" cy="474" r="51"/><circle cx="621" cy="465" r="34"/></g>
+  <g fill="#f2eee4"><rect x="280" y="331" width="68" height="50" rx="8" transform="rotate(-12 280 331)"/><rect x="447" y="337" width="72" height="52" rx="8" transform="rotate(16 447 337)"/><rect x="531" y="255" width="62" height="48" rx="8" transform="rotate(-5 531 255)"/></g>
+  <path d="M688 493c-96 103-383 134-489-6 45 149 142 213 254 213 119 0 206-76 235-207z" fill="#ebe4d4"/>
+</svg>
