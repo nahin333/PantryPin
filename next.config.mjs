@@ -4,6 +4,7 @@ const basePath = isGitHubPages ? (process.env.NEXT_PUBLIC_BASE_PATH || "") : "";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  agentRules: false,
   serverExternalPackages: ["openai"],
   ...(isGitHubPages ? {
     output: "export",

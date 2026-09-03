@@ -49,8 +49,8 @@ export function priceIngredients(ingredients: Ingredient[], zip: string) {
 export function recipeGuides(dish: string): RecipeGuide[] {
   const query = encodeURIComponent(dish);
   return [
-    { title: `A reliable guide to ${dish.toLowerCase()}`, publisher: "Serious Eats", minutes: 45, difficulty: "Intermediate", url: `https://www.seriouseats.com/search?q=${query}` },
-    { title: `${dish}: step-by-step`, publisher: "BBC Good Food", minutes: 35, difficulty: "Easy", url: `https://www.bbcgoodfood.com/search?q=${query}` },
-    { title: `Make ${dish.toLowerCase()} at home`, publisher: "The Kitchn", minutes: 40, difficulty: "Easy", url: `https://www.thekitchn.com/search?q=${query}` }
+    { title: `Search for ${dish.toLowerCase()}`, publisher: "Serious Eats", url: `https://www.seriouseats.com/search?q=${query}` },
+    { title: `Search for ${dish.toLowerCase()}`, publisher: "BBC Good Food", url: `https://www.bbcgoodfood.com/search?q=${query}` },
+    { title: `Search for ${dish.toLowerCase()}`, publisher: "The Kitchn", url: `https://www.thekitchn.com/search?q=${query}` }
   ];
 }

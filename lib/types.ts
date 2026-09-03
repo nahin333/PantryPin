@@ -16,7 +16,7 @@ export type PricedIngredient = Ingredient & {
 };
 
 export type RecipeGuide = {
-  title: string; publisher: string; minutes: number; difficulty: string; url: string;
+  title: string; publisher: string; url: string;
 };
 
 export type AnalysisResult = {

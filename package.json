@@ -1,7 +1,25 @@
 {
   "name": "pantrypin",
   "version": "0.1.0",
+  "description": "Turn food photos into likely ingredients, nutrition estimates, and a grocery-planning view.",
   "private": true,
+  "author": "nahin333",
+  "homepage": "https://nahin333.github.io/where-and-how-much/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nahin333/where-and-how-much.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nahin333/where-and-how-much/issues"
+  },
+  "keywords": [
+    "food-ai",
+    "computer-vision",
+    "nutrition",
+    "grocery",
+    "nextjs",
+    "typescript"
+  ],
   "engines": {
     "node": ">=20.9.0"
   },

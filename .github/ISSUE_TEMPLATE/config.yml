@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support guide
+    url: https://github.com/nahin333/where-and-how-much/blob/main/SUPPORT.md
+    about: Review setup guidance and choose the right support channel.
+  - name: Security vulnerability
+    url: https://github.com/nahin333/where-and-how-much/security/advisories/new
+    about: Report suspected vulnerabilities privately instead of opening a public issue.

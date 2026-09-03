@@ -1,0 +1,85 @@
+name: Bug report
+description: Report a reproducible problem in PantryPin
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve PantryPin. The hosted Pages build uses simulated analysis and grocery data; please review the README before reporting expected demo behavior as a bug.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Provide a release tag, commit SHA, or link to the deployment.
+      placeholder: v0.1.0 or 1a2b3c4
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment mode
+      options:
+        - GitHub Pages demo
+        - Local demo mode
+        - Self-hosted AI backend
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include your operating system, browser, and Node.js version when relevant.
+      placeholder: macOS 15, Chrome 140, Node.js 22.18.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence that demonstrates the problem.
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs or screenshots
+      description: Remove API keys, authorization headers, private photos, and personal information.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for a duplicate.
+          required: true
+        - label: I removed secrets, private images, and personal information.
+          required: true
+        - label: I understand that the hosted demo and all current grocery data are simulated.
+          required: true

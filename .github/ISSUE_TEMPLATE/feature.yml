@@ -1,0 +1,76 @@
+name: Feature request
+description: Propose an improvement to PantryPin
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea. Describe the user problem first so the best solution can be evaluated together.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - User experience or accessibility
+        - Food and nutrition analysis
+        - Grocery or retailer integration
+        - Privacy or security
+        - Documentation or community
+        - Developer experience or testing
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Who experiences this problem, and what are they trying to accomplish?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Explain the behavior you would like to see without assuming a specific implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Share workarounds or other approaches you considered.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add mockups, examples, related projects, or provider documentation. Do not include private data.
+
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Would you like to work on this?
+      options:
+        - Yes, with maintainer guidance
+        - Yes, I can prepare a pull request
+        - No, I am only proposing the idea
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for a similar request.
+          required: true
+        - label: I will not propose scraping or unauthorized use of retailer data.
+          required: true
+        - label: I understand that nutrition and ingredient output must remain clearly labeled as estimates.
+          required: true

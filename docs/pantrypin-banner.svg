@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
+  <title id="title">PantryPin</title>
+  <desc id="desc">See what's in your food and what it might cost</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fbf8ee"/>
+      <stop offset="1" stop-color="#eef2df"/>
+    </linearGradient>
+    <linearGradient id="bowl" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f3d575"/>
+      <stop offset="1" stop-color="#b96f3b"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#193720" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="520" rx="28" fill="url(#bg)"/>
+  <circle cx="110" cy="450" r="210" fill="none" stroke="#b7d466" stroke-opacity=".16" stroke-width="80"/>
+  <circle cx="1205" cy="58" r="170" fill="#e6b95d" fill-opacity=".13"/>
+
+  <g transform="translate(72 61)">
+    <path d="M26 0C11.6 0 0 11.6 0 26c0 20 26 47 26 47s26-27 26-47C52 11.6 40.4 0 26 0Z" fill="#234a2f"/>
+    <circle cx="26" cy="25" r="8" fill="#b8d767"/>
+    <text x="68" y="39" fill="#18251c" font-family="Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="-1">Pantry<tspan fill="#617d40">Pin</tspan></text>
+  </g>
+
+  <text x="72" y="202" fill="#18251c" font-family="Georgia, serif" font-size="58" font-weight="600" letter-spacing="-2">See what's in it.</text>
+  <text x="72" y="268" fill="#5d783e" font-family="Georgia, serif" font-size="58" font-style="italic" font-weight="600" letter-spacing="-2">Explore what it might cost.</text>
+  <text x="74" y="319" fill="#677169" font-family="Arial, sans-serif" font-size="18">Photo → likely ingredients → nutrition → grocery planning</text>
+
+  <g transform="translate(72 366)">
+    <rect width="167" height="48" rx="24" fill="#234a2f"/>
+    <text x="83.5" y="30" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="700">TRY THE DEMO</text>
+    <rect x="181" width="194" height="48" rx="24" fill="#fff" stroke="#d6dacb"/>
+    <text x="278" y="30" text-anchor="middle" fill="#3f5640" font-family="Arial, sans-serif" font-size="14" font-weight="700">FORK &amp; EXPERIMENT</text>
+  </g>
+
+  <g transform="translate(790 55)" filter="url(#shadow)">
+    <rect width="410" height="410" rx="30" fill="#fffef9"/>
+    <ellipse cx="205" cy="191" rx="142" ry="128" fill="#f2eddf"/>
+    <ellipse cx="205" cy="181" rx="116" ry="104" fill="url(#bowl)"/>
+    <path d="M105 146c38-54 87-62 117-27-18 39-55 57-107 52Z" fill="#6e9148"/>
+    <path d="M222 87c65 7 92 35 92 81-44 14-80-5-105-52Z" fill="#e9d17d"/>
+    <g fill="#dc6249"><circle cx="147" cy="206" r="23"/><circle cx="265" cy="194" r="21"/><circle cx="194" cy="132" r="17"/></g>
+    <g fill="#f3eee1"><rect x="136" y="170" width="37" height="29" rx="5" transform="rotate(-12 136 170)"/><rect x="217" y="174" width="39" height="30" rx="5" transform="rotate(15 217 174)"/></g>
+    <path d="M333 257c-43 65-210 79-260-2 22 85 76 119 132 119 63 0 111-42 128-117Z" fill="#eae3d3"/>
+
+    <g transform="translate(-39 286)">
+      <rect width="153" height="75" rx="15" fill="#fff"/>
+      <circle cx="31" cy="27" r="15" fill="#f9e2da"/>
+      <text x="31" y="33" text-anchor="middle" fill="#c95e42" font-family="Arial" font-size="18">♥</text>
+      <text x="55" y="26" fill="#8b918b" font-family="Arial" font-size="10" font-weight="700">ESTIMATED</text>
+      <text x="55" y="48" fill="#18251c" font-family="Arial" font-size="20" font-weight="700">670 kcal</text>
+    </g>
+    <g transform="translate(287 37)">
+      <rect width="156" height="76" rx="15" fill="#fff"/>
+      <text x="19" y="27" fill="#77944e" font-family="Arial" font-size="10" font-weight="700">BREAKDOWN</text>
+      <text x="19" y="53" fill="#18251c" font-family="Arial" font-size="21" font-weight="700">8 ingredients</text>
+    </g>
+    <g transform="translate(300 302)">
+      <rect width="145" height="76" rx="15" fill="#fff"/>
+      <text x="18" y="27" fill="#a67e22" font-family="Arial" font-size="10" font-weight="700">DEMO BASKET</text>
+      <text x="18" y="54" fill="#18251c" font-family="Arial" font-size="22" font-weight="700">$25.47</text>
+    </g>
+  </g>
+</svg>

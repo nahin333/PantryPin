@@ -1,0 +1,63 @@
+name: Setup or usage question
+description: Ask for help running, configuring, or understanding PantryPin
+title: "[Question]: "
+labels:
+  - question
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your question. The hosted Pages build uses preset scenarios, and grocery data is simulated in every current mode. Please read the README and SUPPORT guide before continuing.
+
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment mode
+      options:
+        - GitHub Pages demo
+        - Local demo mode
+        - Self-hosted AI backend
+        - I have not installed PantryPin yet
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Explain what you are trying to accomplish and where you are stuck.
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempts
+    attributes:
+      label: What have you tried?
+      description: Include relevant documentation, commands, and troubleshooting steps.
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include your operating system, browser, Node.js version, and commit or release when relevant.
+      placeholder: Ubuntu 24.04, Firefox 142, Node.js 22.18.0, v0.1.0
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Sanitized output
+      description: Paste relevant errors or logs after removing secrets, private image data, and personal information.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I read the README and SUPPORT guide and searched existing issues.
+          required: true
+        - label: I removed API keys, authorization headers, private images, and personal information.
+          required: true

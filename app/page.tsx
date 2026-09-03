@@ -9,7 +9,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const externalApi = (process.env.NEXT_PUBLIC_API_BASE_URL || "").replace(/\/$/, "");
 const staticDemo = process.env.NEXT_PUBLIC_STATIC_DEMO === "true";
 
-type IconName = "camera" | "pin" | "spark" | "upload" | "arrow" | "check" | "flame" | "bag" | "clock" | "book" | "refresh" | "shield";
+type IconName = "camera" | "pin" | "spark" | "upload" | "arrow" | "check" | "flame" | "bag" | "book" | "refresh" | "shield";
 
 function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
   const paths: Record<IconName, React.ReactNode> = {
@@ -21,7 +21,6 @@ function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
     check: <path d="m5 12 4 4L19 6"/>,
     flame: <path d="M12 22c4 0 7-3 7-7 0-3-1.5-5.5-4.5-8.5 0 3-1.5 4.5-2.5 5.5 0-4-2-7-5-10 0 5-2 7-2 11 0 5 3 9 7 9Z"/>,
     bag: <><path d="M6 8h12l1 13H5L6 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></>,
-    clock: <><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></>,
     book: <><path d="M4 5a3 3 0 0 1 3-2h5v17H7a3 3 0 0 0-3 2Z"/><path d="M20 5a3 3 0 0 0-3-2h-5v17h5a3 3 0 0 1 3 2Z"/></>,
     refresh: <><path d="M20 7v5h-5"/><path d="M19 12a7 7 0 1 0-2 5"/></>,
     shield: <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></>
@@ -120,7 +119,7 @@ function UploadPanel({ onResult }: { onResult: (result: AnalysisResult, preview:
       <div className="upload-heading">
         <span className="eyebrow"><Icon name="spark" size={15} /> Food intelligence, made simple</span>
         <h2>What’s on your plate?</h2>
-        <p>Upload a clear photo and we’ll unpack the ingredients, nutrition, and cost near you.</p>
+        <p>Upload a clear photo to explore ingredients, nutrition, and a grocery-planning view.</p>
       </div>
       {staticDemo && !externalApi && <p className="demo-banner"><strong>GitHub Pages demo:</strong> try the example or a file named “cake” or “pizza.” Secure vision analysis is not connected yet.</p>}
       <div
@@ -151,7 +150,7 @@ function UploadPanel({ onResult }: { onResult: (result: AnalysisResult, preview:
       </div>
       {error && <p className="form-error" role="alert">{error}</p>}
       {!file && <button className="sample-link" type="button" onClick={trySample}>No photo handy? Try our example bowl</button>}
-      <p className="privacy"><Icon name="shield" size={14} /> Your photo is used only for this analysis and isn’t saved by PantryPin.</p>
+      <p className="privacy"><Icon name="shield" size={14} /> {staticDemo && !externalApi ? "This demo keeps the photo in your browser." : "Sent to your configured analysis service; not persisted by PantryPin."}</p>
     </form>
   );
 }
@@ -174,7 +173,7 @@ function Results({ result, preview, onReset }: { result: AnalysisResult; preview
           <div className="result-kicker"><span>{result.cuisine}</span><span>•</span><span>{result.servingDescription}</span></div>
           <h1>{result.dish}</h1>
           <p>{result.description}</p>
-          <div className="mode-note">{result.analysisMode === "demo" ? "Demo ingredient analysis" : "AI photo analysis"} · {result.pricingMode === "estimated" ? "Estimated local prices" : "Live local prices"}</div>
+          <div className="mode-note">{result.analysisMode === "demo" ? "Canned scenario—not pixel analysis" : "AI photo estimate"} · Simulated retailer data</div>
         </div>
         <StatRing value={result.confidence} />
       </section>
@@ -190,7 +189,7 @@ function Results({ result, preview, onReset }: { result: AnalysisResult; preview
         </article>
         <article className="summary-card">
           <span className="summary-icon yellow"><Icon name="bag" /></span>
-          <div><small>Best full basket</small><strong>${result.cheapestTotal.toFixed(2)}</strong><p>{result.stores[0]?.store} · {result.stores[0]?.distance} miles away</p></div>
+          <div><small>Lowest demo basket</small><strong>${result.cheapestTotal.toFixed(2)}</strong><p>Simulated at {result.stores[0]?.store}</p></div>
         </article>
       </section>
 
@@ -203,9 +202,9 @@ function Results({ result, preview, onReset }: { result: AnalysisResult; preview
       </div>
 
       {tab === "ingredients" && <section className="detail-section">
-        <div className="section-heading"><div><span className="eyebrow">Inside the dish</span><h2>Your ingredient breakdown</h2><p>Likely ingredients for recreating a full recipe. Prices are for the smallest common package.</p></div><div className="zip-pill"><Icon name="pin" size={15} /> Near {result.zip}</div></div>
+        <div className="section-heading"><div><span className="eyebrow">Inside the dish</span><h2>Your ingredient breakdown</h2><p>Likely ingredients for recreating a full recipe. Package prices shown are illustrative.</p></div><div className="zip-pill"><Icon name="pin" size={15} /> Demo ZIP {result.zip}</div></div>
         <div className="ingredient-table">
-          <div className="table-head"><span>Ingredient & estimate</span><span>Calories</span><span>Best nearby price</span></div>
+          <div className="table-head"><span>Ingredient & estimate</span><span>Calories</span><span>Lowest demo price</span></div>
           {visibleIngredients.map((item, index) => (
             <div className="ingredient-row" key={item.name}>
               <div className="ingredient-name"><span className={`food-dot food-${index % 5}`}>{["Q", "C", "T", "Cu", "F"][index % 5]}</span><div><strong>{item.name}</strong><small>{item.amount} {item.unit} · {item.confidence} confidence{item.note ? ` · ${item.note}` : ""}</small></div></div>
@@ -218,24 +217,24 @@ function Results({ result, preview, onReset }: { result: AnalysisResult; preview
       </section>}
 
       {tab === "stores" && <section className="detail-section">
-        <div className="section-heading"><div><span className="eyebrow">Basket comparison</span><h2>Where your ingredients cost less</h2><p>Estimated package prices for the same ingredient list near ZIP {result.zip}.</p></div></div>
+        <div className="section-heading"><div><span className="eyebrow">Basket scenario</span><h2>Compare simulated baskets</h2><p>Illustrative package figures seeded by ZIP {result.zip}; no retailer API or inventory lookup.</p></div></div>
         <div className="store-grid">
           {result.stores.map((store, index) => <article className={`store-card ${index === 0 ? "winner" : ""}`} key={store.store}>
             {index === 0 && <span className="best-tag"><Icon name="check" size={14} /> Best total</span>}
             <div className="store-logo" style={{ background: store.color }}>{store.store.slice(0, 1)}</div>
-            <h3>{store.store}</h3><p>{store.distance} miles away</p>
+            <h3>{store.store}</h3><p>Example location · {store.distance} miles</p>
             <strong>${store.total.toFixed(2)}</strong><small>{store.itemCount} items · {store.pickup}</small>
-            <a href={`https://www.google.com/search?q=${encodeURIComponent(store.store + " groceries near " + result.zip)}`} target="_blank" rel="noreferrer">View store <Icon name="arrow" size={16} /></a>
+            <a href={`https://www.google.com/search?q=${encodeURIComponent(store.store + " groceries near " + result.zip)}`} target="_blank" rel="noreferrer">Find real stores <Icon name="arrow" size={16} /></a>
           </article>)}
         </div>
-        <p className="pricing-disclaimer">Retail prices change frequently and may differ by location, package size, availability, tax, and membership. Confirm the final price with the retailer.</p>
+        <p className="pricing-disclaimer">All store names, prices, distances, availability, and pickup times above are simulated. PantryPin is not affiliated with these retailers. Search and confirm current details directly with the retailer.</p>
       </section>}
 
       {tab === "recipes" && <section className="detail-section">
-        <div className="section-heading"><div><span className="eyebrow">From cart to kitchen</span><h2>Make it at home</h2><p>Trusted cooking sites with guides related to the dish we identified.</p></div></div>
+        <div className="section-heading"><div><span className="eyebrow">From cart to kitchen</span><h2>Make it at home</h2><p>Generated searches for this dish on established cooking sites—not selected or verified recipes.</p></div></div>
         <div className="recipe-grid">
           {result.recipes.map((recipe, index) => <a className="recipe-card" href={recipe.url} target="_blank" rel="noreferrer" key={recipe.publisher}>
-            <span className="recipe-art">{recipeEmoji[index]}</span><div><small>{recipe.publisher}</small><h3>{recipe.title}</h3><p><Icon name="clock" size={15} /> About {recipe.minutes} min <span>·</span> {recipe.difficulty}</p><strong>Open guide <Icon name="arrow" size={16} /></strong></div>
+            <span className="recipe-art">{recipeEmoji[index]}</span><div><small>{recipe.publisher}</small><h3>{recipe.title}</h3><p>External site search</p><strong>View search results <Icon name="arrow" size={16} /></strong></div>
           </a>)}
         </div>
       </section>}
@@ -258,9 +257,9 @@ export default function Home() {
           <section className="hero">
             <div className="hero-copy">
               <span className="eyebrow"><Icon name="spark" size={15} /> One photo. The whole story.</span>
-              <h1>See what’s in it.<br/><em>Know what it costs.</em></h1>
-              <p>Turn any food photo into a useful ingredient list, calorie estimate, and local grocery comparison—then learn how to make it yourself.</p>
-              <div className="hero-points"><span><Icon name="check" size={15}/> Ingredient breakdown</span><span><Icon name="check" size={15}/> Nutrition estimate</span><span><Icon name="check" size={15}/> Local price comparison</span></div>
+              <h1>See what’s in it.<br/><em>Explore what it might cost.</em></h1>
+              <p>Explore the path from a food photo to likely ingredients, nutrition estimates, and a grocery-planning view—then find resources to make it yourself.</p>
+              <div className="hero-points"><span><Icon name="check" size={15}/> Ingredient breakdown</span><span><Icon name="check" size={15}/> Nutrition estimate</span><span><Icon name="check" size={15}/> Grocery planning view</span></div>
             </div>
             <UploadPanel onResult={(data, nextPreview) => { setResult(data); setPreview(nextPreview); window.scrollTo({ top: 0, behavior: "smooth" }); }} />
           </section>
@@ -268,8 +267,8 @@ export default function Home() {
             <span className="eyebrow centered">A smarter way to shop & cook</span><h2>From photo to pantry in three steps</h2>
             <div className="step-grid">
               <article><span>01</span><i><Icon name="camera" size={25}/></i><h3>Snap your food</h3><p>Upload any meal, snack, fruit, dessert, or drink. Clear, well-lit photos work best.</p></article>
-              <article><span>02</span><i><Icon name="spark" size={25}/></i><h3>We unpack it</h3><p>Vision analysis identifies the dish, estimates serving nutrition, and infers likely ingredients.</p></article>
-              <article><span>03</span><i><Icon name="bag" size={25}/></i><h3>Shop & make it</h3><p>Compare nearby basket costs and jump to useful guides for recreating the food.</p></article>
+              <article><span>02</span><i><Icon name="spark" size={25}/></i><h3>We unpack it</h3><p>With the API configured, vision analysis estimates the dish, serving nutrition, and likely ingredients.</p></article>
+              <article><span>03</span><i><Icon name="bag" size={25}/></i><h3>Plan & make it</h3><p>Explore an illustrative basket and jump to cooking-site searches for recreating the food.</p></article>
             </div>
           </section>
           <section className="trust-section" id="about">
@@ -278,7 +277,7 @@ export default function Home() {
           </section>
         </main>
       </>}
-      <footer><div className="brand"><span className="brand-mark"><Icon name="pin" size={17}/></span><span>Pantry<span>Pin</span></span></div><p>Food insight for curious eaters.</p><small>Nutrition and prices are estimates. Not medical advice.</small></footer>
+      <footer><div className="brand"><span className="brand-mark"><Icon name="pin" size={17}/></span><span>Pantry<span>Pin</span></span></div><p>Food insight for curious eaters.</p><small>Nutrition is estimated; retailer data is simulated. Not medical advice.</small></footer>
     </div>
   );
 }
